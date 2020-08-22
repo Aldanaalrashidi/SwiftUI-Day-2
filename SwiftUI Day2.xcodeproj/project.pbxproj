@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		571D928D24EEA2AE00A8C0AB /* MoviesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571D928C24EEA2AE00A8C0AB /* MoviesList.swift */; };
+		57E13C6024F14DA300B5C958 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E13C5F24F14DA300B5C958 /* MovieDetailsView.swift */; };
+		57E13C6324F1598A00B5C958 /* Athkar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E13C6224F1598A00B5C958 /* Athkar.swift */; };
 		57E702FC24EE8AEF005A3974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E702FB24EE8AEF005A3974 /* AppDelegate.swift */; };
 		57E702FE24EE8AEF005A3974 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E702FD24EE8AEF005A3974 /* SceneDelegate.swift */; };
-		57E7030024EE8AEF005A3974 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E702FF24EE8AEF005A3974 /* ContentView.swift */; };
 		57E7030224EE8AF3005A3974 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E7030124EE8AF3005A3974 /* Assets.xcassets */; };
 		57E7030524EE8AF3005A3974 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57E7030424EE8AF3005A3974 /* Preview Assets.xcassets */; };
 		57E7030824EE8AF3005A3974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E7030624EE8AF3005A3974 /* LaunchScreen.storyboard */; };
+		57E7031024EE8C05005A3974 /* AthkarCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E7030F24EE8C05005A3974 /* AthkarCounter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		571D928C24EEA2AE00A8C0AB /* MoviesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesList.swift; sourceTree = "<group>"; };
+		57E13C5F24F14DA300B5C958 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		57E13C6224F1598A00B5C958 /* Athkar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athkar.swift; sourceTree = "<group>"; };
 		57E702F824EE8AEF005A3974 /* SwiftUI Day2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Day2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E702FB24EE8AEF005A3974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57E702FD24EE8AEF005A3974 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		57E702FF24EE8AEF005A3974 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		57E7030124EE8AF3005A3974 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57E7030424EE8AF3005A3974 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		57E7030724EE8AF3005A3974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57E7030924EE8AF3005A3974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57E7030F24EE8C05005A3974 /* AthkarCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthkarCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57E13C5E24F149E700B5C958 /* Classwork */ = {
+			isa = PBXGroup;
+			children = (
+				57E7030F24EE8C05005A3974 /* AthkarCounter.swift */,
+				571D928C24EEA2AE00A8C0AB /* MoviesList.swift */,
+				57E13C5F24F14DA300B5C958 /* MovieDetailsView.swift */,
+			);
+			path = Classwork;
+			sourceTree = "<group>";
+		};
+		57E13C6124F1595200B5C958 /* Assignment 2 */ = {
+			isa = PBXGroup;
+			children = (
+				57E13C6224F1598A00B5C958 /* Athkar.swift */,
+			);
+			path = "Assignment 2";
+			sourceTree = "<group>";
+		};
 		57E702EF24EE8AEF005A3974 = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +82,8 @@
 			children = (
 				57E702FB24EE8AEF005A3974 /* AppDelegate.swift */,
 				57E702FD24EE8AEF005A3974 /* SceneDelegate.swift */,
-				57E702FF24EE8AEF005A3974 /* ContentView.swift */,
+				57E13C5E24F149E700B5C958 /* Classwork */,
+				57E13C6124F1595200B5C958 /* Assignment 2 */,
 				57E7030124EE8AF3005A3974 /* Assets.xcassets */,
 				57E7030624EE8AF3005A3974 /* LaunchScreen.storyboard */,
 				57E7030924EE8AF3005A3974 /* Info.plist */,
@@ -147,8 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E702FC24EE8AEF005A3974 /* AppDelegate.swift in Sources */,
+				57E7031024EE8C05005A3974 /* AthkarCounter.swift in Sources */,
+				57E13C6324F1598A00B5C958 /* Athkar.swift in Sources */,
+				571D928D24EEA2AE00A8C0AB /* MoviesList.swift in Sources */,
 				57E702FE24EE8AEF005A3974 /* SceneDelegate.swift in Sources */,
-				57E7030024EE8AEF005A3974 /* ContentView.swift in Sources */,
+				57E13C6024F14DA300B5C958 /* MovieDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
