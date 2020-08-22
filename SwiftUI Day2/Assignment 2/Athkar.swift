@@ -13,7 +13,6 @@ struct Athkar: View {
     @State var thekr: [String] = ["قُلْ هُوَ ٱللَّهُ أَحَدٌ، ٱللَّهُ ٱلصَّمَدُ، لَمْ يَلِدْ وَلَمْ يُولَدْ، وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ.", "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ، مِن شَرِّ مَا خَلَقَ، وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ، وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ، وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ.", "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ، مَلِكِ ٱلنَّاسِ، إِلَٰهِ ٱلنَّاسِ، مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ، ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ، مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ.", "رَضيـتُ بِاللهِ رَبَّـاً وَبِالإسْلامِ ديـناً وَبِمُحَـمَّدٍ صلى الله عليه وسلم نَبِيّـاً.", "حَسْبِـيَ اللّهُ لا إلهَ إلاّ هُوَ عَلَـيهِ تَوَكَّـلتُ وَهُوَ رَبُّ العَرْشِ العَظـيم. ", "بِسـمِ اللهِ الذي لا يَضُـرُّ مَعَ اسمِـهِ شَيءٌ في الأرْضِ وَلا في السّمـاءِ وَهـوَ السّمـيعُ العَلـيم."]
     var body: some View {
         NavigationView{
-            
             List{
                 NavigationLink(destination: Thekr2(counter:$counter[0], thekr: $thekr[0])){
                     Thekr(counter: $counter[0], thekr: $thekr[0]).offset(x: 12)
@@ -58,12 +57,9 @@ struct Thekr: View {
     var body: some View {
         VStack{
             Text(thekr).font(.system(size: 25)).multilineTextAlignment(.center)
-            Button(action: {
-                self.counter = String(Int(self.counter)! + 1)
-            }) {
-                Text(counter)
-                    .font(.largeTitle)
-            }.frame(width: 50, height: 50, alignment: .center)
+            Text(counter)
+                .font(.largeTitle)
+                .frame(width: 50, height: 50, alignment: .center)
                 .foregroundColor(.white)
                 .background(Color.gray.opacity(0.7))
                 .clipShape(Circle())
@@ -84,13 +80,13 @@ struct Thekr2: View {
                 Text(counter)
                     .font(.largeTitle)
             }.frame(width: 50, height: 50, alignment: .center)
-                    .foregroundColor(.white)
-                    .background(Color.gray.opacity(0.7))
-                    .clipShape(Circle())
-                    .padding()
-            }.onTapGesture {
-                self.counter = String(Int(self.counter)! + 1)
-            }
+                .foregroundColor(.white)
+                .background(Color.gray.opacity(0.7))
+                .clipShape(Circle())
+                .padding()
+        }.onTapGesture {
+            self.counter = String(Int(self.counter)! + 1)
         }
     }
+}
 
