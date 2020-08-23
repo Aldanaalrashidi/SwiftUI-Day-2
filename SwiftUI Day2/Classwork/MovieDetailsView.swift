@@ -13,7 +13,7 @@ struct MovieDetailsView: View {
     var body: some View {
         ZStack(alignment: .bottom){
             MovieBG(movie: movie)
-            VStack(alignment: .center){
+            VStack{
                 VStack{
                     Spacer()
                     Image(uiImage: movie.movieImg)
