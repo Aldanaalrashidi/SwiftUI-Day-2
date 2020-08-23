@@ -11,44 +11,25 @@ import SwiftUI
 struct MoviesList: View {
     var body: some View {
         NavigationView{
-            List{
-                NavigationLink(destination: MovieDetailsView(movieName: "Aladdin", mainCharacters: ["Mena Massoud", "Naomi Scott", "Will Smith"], movieImg: #imageLiteral(resourceName: "Aladdin"))) {
-                    MovieRow(movieName: "Aladdin", mainCharacters: ["Mena Massoud", "Naomi Scott", "Will Smith"])
-                }
-                NavigationLink(destination: MovieDetailsView(movieName: "Maleficent", mainCharacters: ["Angelina Jolie", "Elle Fanning", "Sam Riley"], movieImg: #imageLiteral(resourceName: "Maleficent"))) {
-                    MovieRow(movieName: "Maleficent", mainCharacters: ["Angelina Jolie", "Elle Fanning", "Sam Riley"])
-                }
-                NavigationLink(destination: MovieDetailsView(movieName: "Beauty & the Beast", mainCharacters: ["Dan Stevens", "Emma Watson", "Luke Evans"], movieImg: #imageLiteral(resourceName: "Beauty & the Beast"))) {
-                    MovieRow(movieName: "Beauty & the Beast", mainCharacters: ["Dan Stevens", "Emma Watson", "Luke Evans"])
+            List(movies){ movie in
+                NavigationLink(destination: MovieDetailsView( movie: movie)) {
+                    MovieRow(movie: movie)
                 }
             }.navigationBarTitle("Movies")
-        }
+        }.accentColor(.white)
     }
 }
 
 struct MoviesList_Previews: PreviewProvider {
     static var previews: some View {
+        Group{
         MoviesList()
+            .previewDisplayName("List Of Movies")
+            .environment(\.colorScheme, .dark)
+            MovieRow(movie: movies[0])
+                .previewLayout(.sizeThatFits)
+                .previewDisplayName("Movie Row")
+        }
     }
 }
 
-struct MovieRow: View {
-    var movieName: String
-    var mainCharacters: [String]
-    var body: some View {
-        HStack(alignment: .center){
-            Image(movieName)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 90)
-                .clipShape(Circle())
-            
-            VStack(alignment: .leading){
-                Text(movieName)
-                    .font(.largeTitle)
-                Text(mainCharacters.joined(separator: ", "))
-                    .font(.system(size: 17))
-            }
-        }.padding(.vertical)
-    }
-}

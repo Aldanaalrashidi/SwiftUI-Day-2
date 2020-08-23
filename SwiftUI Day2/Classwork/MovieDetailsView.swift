@@ -9,46 +9,61 @@
 import SwiftUI
 
 struct MovieDetailsView: View {
-    var movieName: String
-    var mainCharacters: [String]
-    var movieImg : UIImage
+    var movie: Movie
     var body: some View {
-        ZStack{
-            Group{
-                Image(movieName)
-                    .resizable()
-                    .scaledToFill()
-                    .blur(radius: 40)
-                Color.black.opacity(0.3)
-            }.edgesIgnoringSafeArea(.all)
-            
+        ZStack(alignment: .bottom){
+            MovieBG(movie: movie)
             VStack(alignment: .center){
-                Image(uiImage: movieImg)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 300)
-                    .overlay(Circle().stroke(Color.white, lineWidth: 6))
-                
-                Text(movieName)
-                    .font(.system(size: 45))
-                    .bold()
-                
-                Text(mainCharacters.joined(separator: ", "))
-                    .font(.system(size: 22))
-                Spacer()
+                VStack{
+                    Spacer()
+                    Image(uiImage: movie.movieImg)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .frame(width: 300)
+                        .overlay(Circle().stroke(Color.white, lineWidth: 6))
+                    
+                    Text(movie.movieName)
+                        .font(.system(size: 45))
+                        .bold()
+                    
+                    Text(movie.mainCharacters.joined(separator: ", "))
+                        .font(.system(size: 22))
+                    Spacer()
+                }
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack{
+                        ForEach(movie.mainCharacters, id: \.self){ (character:String) in
+                                Image(character).resizable().scaledToFit().frame(width: 200).clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.white, lineWidth: 1.5))
+                            }
+                        }
+                    }
+                }
+                .padding(.vertical)
+                .foregroundColor(.white)                
             }
-            .padding(.vertical)
-            .foregroundColor(.white)
-            .shadow(radius: 8)
-            
         }
     }
-}
 
 
 struct MovieDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetailsView(movieName: "Aladdin", mainCharacters: ["Mena Massoud", "Naomi Scott", "Will Smith"], movieImg: #imageLiteral(resourceName: "Aladdin"))
+        MovieDetailsView(movie: movies[0])
+    }
+}
+
+struct MovieBG: View {
+    var movie: Movie
+    var body: some View {
+        Group{
+            Color.black.opacity(0.3)
+                .background(
+                    Image(movie.movieName)
+                        .resizable()
+                        .scaledToFill()
+                        .blur(radius: 40)
+            )
+        }.edgesIgnoringSafeArea(.all)
     }
 }
